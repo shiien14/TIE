@@ -37,4 +37,7 @@ public class Board {
 
     @OneToMany(mappedBy = "BOARD_ID")
     private List<Channel_recommend> Channel_recommend = new ArrayList<>();
+
+    @OneToMany(mappedBy = "Board")
+    private List<Post> Post = new ArrayList<>();
 }

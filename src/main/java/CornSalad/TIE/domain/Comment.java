@@ -30,4 +30,26 @@ public class Comment {
     private LocalDateTime CREATE_DATE;
     private LocalDateTime MODIFY_DATE;
     private Boolean DELETE_YN;
+
+    //==연관관계 메서드==//
+    public void setUser(User user) {
+        this.USER = user;
+        user.getComment().add(this);
+    }
+    public void setPost(Post post) {
+        this.POST = post;
+        post.getComment().add(this);
+    }
+
+    //==생성 메서드==//
+    public static Comment createComment(User user, Post post) {
+        Comment comment = new Comment();
+        comment.setUser(user);
+        comment.setPost(post);
+
+        comment.setCOMMENT_CONTENTS(comment.COMMENT_CONTENTS);
+
+        comment.setCREATE_DATE(LocalDateTime.now());
+        return comment;
+    }
 }

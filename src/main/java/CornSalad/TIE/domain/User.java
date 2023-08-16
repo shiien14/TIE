@@ -29,6 +29,9 @@ public class User {
     @OneToMany(mappedBy = "USER")
     private List<Comment> Comment = new ArrayList<>();
 
+    @OneToMany(mappedBy = "User")
+    private List<Post> Post = new ArrayList<>();
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Hash_tag TAG_ID; // 이부분 보완필요.. hashtag 단방향 연관을 만들고싶어요 ㅠㅅㅠ
 
