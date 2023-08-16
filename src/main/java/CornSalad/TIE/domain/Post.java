@@ -60,7 +60,7 @@ public class Post {
 
     public void addComment(Comment comment) {
         Comment.add(comment);
-        comment.setPOST(this);
+        comment.setPost(this);
     }
     public void addHashtag(Hash_tag hash_tag) {
         Hash_tag.add(hash_tag);
