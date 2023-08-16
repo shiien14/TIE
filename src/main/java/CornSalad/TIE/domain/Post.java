@@ -69,14 +69,14 @@ public class Post {
 
 
     //==생성 메서드==//
-    public static Post createPost(User user, Board board, Hash_tag... hash_tag, Comment... comment) {
+    public static Post createPost(User user, Board board, Comment... comment) { //Hash_tag... hash_tag
         Post post = new Post();
         post.setUser(user);
         post.setBoard(board);
 
-        for (Hash_tag Hash_tag : hash_tag) {
-            post.addHashtag(Hash_tag);
-        }
+        //for (Hash_tag Hash_tag : hash_tag) {
+        //    post.addHashtag(Hash_tag);
+        //}
         for (Comment Comment : comment) {
             post.addComment(Comment);
         }
