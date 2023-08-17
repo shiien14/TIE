@@ -70,4 +70,47 @@ public class Channel {
         channel.setCREATE_DATE(LocalDateTime.now());
         return channel;
     }
+
+    //==수정 메서드==//
+    // 댓글 내용 업데이트, 수정 일시를 현재 시각으로 업데이트
+    public void updateChannel(String newChannel) {
+        this.CHANNEL_CONTENTS = newChannel;
+        this.MODIFY_DATE = LocalDateTime.now();
+    }
+
+
+
+    //==삭제 메서드==//
+    // 댓글 삭제, 삭제 일시를 현재 시각으로 업데이트
+    public void deleteChannel() {
+        this.DELETE_YN = true;
+        this.MODIFY_DATE = LocalDateTime.now();
+    }
+
+
+
+    //==조회 메서드==//
+    // 삭제된 댓글인지 Y/N
+    public Boolean isDeleted() {
+        return DELETE_YN;
+    }
+    public String getTitle() {
+        return CHANNEL_TITLE;
+    }
+
+    public String getChannel() {
+        return CHANNEL_CONTENTS;
+    }
+
+    public String getPhotos() {
+        return CHANNEL_PHOTO;
+    }
+
+    public LocalDateTime getCreateDate() {
+        return CREATE_DATE;
+    }
+
+    public LocalDateTime getModifyDate() {
+        return MODIFY_DATE;
+    }
 }

@@ -52,4 +52,39 @@ public class Comment {
         comment.setCREATE_DATE(LocalDateTime.now());
         return comment;
     }
+
+    //==수정 메서드==//
+    // 댓글 내용 업데이트, 수정 일시를 현재 시각으로 업데이트
+    public void updateComment(String newComment) {
+        this.COMMENT_CONTENTS = newComment;
+        this.MODIFY_DATE = LocalDateTime.now();
+    }
+
+
+    //==삭제 메서드==//
+    // 댓글 삭제, 삭제 일시를 현재 시각으로 업데이트
+    public void deleteComment() {
+        this.DELETE_YN = true;
+        this.MODIFY_DATE = LocalDateTime.now();
+    }
+
+
+
+    //==조회 메서드==//
+    // 삭제된 댓글인지 Y/N
+    public Boolean isDeleted() {
+        return DELETE_YN;
+    }
+
+    public String getContents() {
+        return COMMENT_CONTENTS;
+    }
+
+    public LocalDateTime getCreateDate() {
+        return CREATE_DATE;
+    }
+
+    public LocalDateTime getModifyDate() {
+        return MODIFY_DATE;
+    }
 }
